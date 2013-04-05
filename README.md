@@ -22,4 +22,4 @@ You load the pencils file (*.ep), all the tabs are displayed, you press up and d
 Written in Java.
 
 
-PS: the tool is a fix, I hope someone will fix Pencils directly soon, so this tool will become useless!
+PS: the tool is a workaround, I hope someone will fix Pencils directly soon, so this tool will become useless!
