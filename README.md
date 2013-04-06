@@ -4,8 +4,9 @@
 
 ### Execute the tool
 1. You should have Java installed (at least Java 6)
-2. Download the fastMoveTab.jar in build folder.
-3. On Windows, download in the same folder run.bat and launch it. On linux, download in the same folder run.sh and launch it.
+2. Download Zip, unzip it.
+3. Go to the build folder.
+4. On Windows, double click on run.bat. On linux, execute run.sh.
 
 
 ### How does it work
