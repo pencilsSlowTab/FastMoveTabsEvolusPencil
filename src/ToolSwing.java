@@ -18,6 +18,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.BevelBorder;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.JScrollPane;
 
 public class ToolSwing {
 
@@ -91,23 +92,14 @@ public class ToolSwing {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 676, 591);
+		frame.setBounds(100, 100, 703, 747);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		styledText.setBounds(12, 12, 633, 15);
 		frame.getContentPane().add(styledText);
 
-		list_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				selectedPage = list_1.getSelectedIndex();
-				System.out.println("Page: " + selectedPage);
-			}
-		});
-
 		loadHistoric();
-		loadXmlTree(list_1);
 
 		JButton btnNewButton = new JButton("Load");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -128,7 +120,7 @@ public class ToolSwing {
 				}
 			}
 		});
-		btnNewButton.setBounds(279, 74, 117, 25);
+		btnNewButton.setBounds(399, 68, 117, 25);
 		frame.getContentPane().add(btnNewButton);
 
 		JButton btnUp = new JButton("up");
@@ -142,7 +134,7 @@ public class ToolSwing {
 				list_1.setSelectedIndex(selectedPage);
 			}
 		});
-		btnUp.setBounds(279, 130, 117, 25);
+		btnUp.setBounds(399, 127, 117, 25);
 		frame.getContentPane().add(btnUp);
 
 		JButton btnNewButton_2 = new JButton("down");
@@ -156,12 +148,25 @@ public class ToolSwing {
 				list_1.setSelectedIndex(selectedPage);
 			}
 		});
-		btnNewButton_2.setBounds(279, 167, 117, 25);
+		btnNewButton_2.setBounds(399, 173, 117, 25);
 		frame.getContentPane().add(btnNewButton_2);
-
-		list_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		list_1.setBounds(45, 39, 211, 448);
-		frame.getContentPane().add(list_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(40, 48, 347, 657);
+		frame.getContentPane().add(scrollPane);
+										scrollPane.setViewportView(list_1);
+										list_1.setValueIsAdjusting(true);
+										
+												list_1.addMouseListener(new MouseAdapter() {
+													@Override
+													public void mouseReleased(MouseEvent e) {
+														selectedPage = list_1.getSelectedIndex();
+														System.out.println("Page: " + selectedPage);
+													}
+												});
+												loadXmlTree(list_1);
+												
+														list_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 	}
 
 	private void loadXmlTree(JList list) {
