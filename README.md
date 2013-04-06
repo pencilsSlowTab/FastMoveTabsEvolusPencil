@@ -15,7 +15,7 @@ Launch the command to execute:
 ### How does it work
 
 You load the pencils file (*.ep), all the tabs are displayed, you press up and down button to move the tabs at the position you want.  When you move a tab, it is saved automatically.
-
+You will need to reload the file if it was opened in Evolus Pencils.
 
 
 
