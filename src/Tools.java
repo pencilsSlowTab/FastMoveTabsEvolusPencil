@@ -88,15 +88,16 @@ public class Tools {
 		shell.setSize(1112, 736);
 		shell.setText("SWT Application");
 		
-		styledText = new StyledText(shell, SWT.BORDER);
+		styledText = new StyledText(shell, SWT.BORDER | SWT.READ_ONLY);
 		styledText.setBounds(10, 1, 683, 19);
 
 		Button btnNewButton = new Button(shell, SWT.NONE);
 		final Tree tree = new Tree(shell, SWT.BORDER);
 
 		loadHistoric(tree);
-		styledText.setText(pencilsFilePath);
-
+		if (pencilsFilePath != null) {
+			styledText.setText(pencilsFilePath);
+		}
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseUp(MouseEvent e) {
@@ -118,7 +119,7 @@ public class Tools {
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(316, 50, 91, 29);
+		btnNewButton.setBounds(316, 145, 91, 29);
 		btnNewButton.setText("Up");
 
 		Button btnNewButton_1 = new Button(shell, SWT.NONE);
@@ -134,7 +135,7 @@ public class Tools {
 				selectedItem = item;
 			}
 		});
-		btnNewButton_1.setBounds(316, 96, 91, 29);
+		btnNewButton_1.setBounds(316, 180, 91, 29);
 		btnNewButton_1.setText("Down");
 
 		tree.addSelectionListener(new SelectionAdapter() {
@@ -163,7 +164,7 @@ public class Tools {
 			}
 
 		});
-		btnChooseFile.setBounds(558, 189, 91, 29);
+		btnChooseFile.setBounds(316, 39, 145, 43);
 		
 		
 		formToolkit.adapt(styledText);
