@@ -14,7 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.BevelBorder;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -101,7 +100,7 @@ public class ToolSwing {
 
 		loadHistoric();
 
-		JButton btnNewButton = new JButton("Load");
+		JButton btnNewButton = new JButton("Open file");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				FileFilter filter = new FileNameExtensionFilter("Pencil", "ep");
@@ -190,7 +189,7 @@ public class ToolSwing {
 			final DefaultListModel model = new DefaultListModel();
 			for (int i = 0; i < pages.length; i++) {
 				model.addElement(pages[i]);
-				System.out.println(" pages[i] " + pages[i]);
+//				System.out.println(" pages[i] " + pages[i]);
 				// item.setText(pages[i]);
 				// item.setData("id", i);
 			}
